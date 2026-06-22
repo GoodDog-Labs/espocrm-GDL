@@ -1,7 +1,6 @@
 services:
   app:
-    build: .
-    image: gooddoglabs/espocrm-gdl:latest
+    image: espocrm/espocrm:8.4.1-php-8.3
     restart: unless-stopped
     environment:
       ESPOCRM_DATABASE_HOST: db
@@ -11,14 +10,14 @@ services:
       ESPOCRM_ADMIN_USERNAME: admin
       ESPOCRM_ADMIN_PASSWORD: ${ESPOCRM_ADMIN_PASSWORD}
     volumes:
+      - ./custom:/var/www/html/custom
       - espocrm_data:/var/www/html/data
     depends_on:
       db:
         condition: service_healthy
 
   daemon:
-    build: .
-    image: gooddoglabs/espocrm-gdl:latest
+    image: espocrm/espocrm:8.4.1-php-8.3
     restart: unless-stopped
     entrypoint: docker-daemon.sh
     environment:
@@ -27,6 +26,7 @@ services:
       ESPOCRM_DATABASE_USER: espocrm
       ESPOCRM_DATABASE_PASSWORD: ${ESPOCRM_DATABASE_PASSWORD}
     volumes:
+      - ./custom:/var/www/html/custom
       - espocrm_data:/var/www/html/data
     depends_on:
       - app
