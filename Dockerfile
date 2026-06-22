@@ -19,15 +19,12 @@ RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local
 
 WORKDIR /var/www/html
 
-RUN composer create-project espocrm/espocrm . --no-interaction --no-dev && \
+RUN git clone https://github.com/espocrm/espocrm.git . && \
+    git checkout tags/10.0.0 && \
+    rm -rf .git && \
     chown -R www-data:www-data /var/www/html && \
-    chmod -R 755 /var/www/html/data && \
-    chmod -R 755 /var/www/html/application/Espo/Modules
+    chmod -R 755 /var/www/html/data
 
 COPY --chown=www-data:www-data custom /var/www/html/custom
-
-RUN echo '<?php' > /var/www/html/install/config.php && \
-    echo "return array('installedAt' => date('Y-m-d H:i:s'));" >> /var/www/html/install/config.php && \
-    chown www-data:www-data /var/www/html/install/config.php
 
 EXPOSE 80
