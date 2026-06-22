@@ -14,9 +14,11 @@ RUN apt-get update && apt-get install -y \
 
 WORKDIR /var/www/html
 
-RUN chown -R www-data:www-data /var/www/html && \
-    chmod -R 755 /var/www/html
+COPY 000-default.conf /etc/apache2/sites-available/000-default.conf
+COPY entrypoint.sh /usr/local/bin/entrypoint.sh
 
-COPY --chown=www-data:www-data 000-default.conf /etc/apache2/sites-available/000-default.conf
+RUN chmod +x /usr/local/bin/entrypoint.sh
 
 EXPOSE 80
+
+ENTRYPOINT ["/usr/local/bin/entrypoint.sh"]
