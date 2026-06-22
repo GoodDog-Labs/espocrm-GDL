@@ -10,7 +10,7 @@ services:
       ESPOCRM_DATABASE_PASSWORD: ${ESPOCRM_DATABASE_PASSWORD}
       ESPOCRM_ADMIN_USERNAME: admin
       ESPOCRM_ADMIN_PASSWORD: ${ESPOCRM_ADMIN_PASSWORD}
-      ESPOCRM_SITE_URL: ${ESPOCRM_SITE_URL}
+      ESPOCRM_SITE_URL: ${ESPOCRM_SITE_URL:-https://crm.gooddoglabs.net}
     volumes:
       - espocrm_data:/var/www/html/data
       - espocrm_custom:/var/www/html/custom
