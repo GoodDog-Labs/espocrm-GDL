@@ -17,6 +17,8 @@ services:
     depends_on:
       db:
         condition: service_healthy
+    networks:
+      - coolify
 
   db:
     image: mysql:8.0
@@ -32,6 +34,12 @@ services:
       test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
       interval: 5s
       retries: 10
+    networks:
+      - coolify
+
+networks:
+  coolify:
+    external: true
 
 volumes:
   espocrm_data:
