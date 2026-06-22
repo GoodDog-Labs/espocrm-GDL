@@ -6,9 +6,9 @@ services:
       ESPOCRM_DATABASE_HOST: db
       ESPOCRM_DATABASE_NAME: espocrm
       ESPOCRM_DATABASE_USER: espocrm
-      ESPOCRM_DATABASE_PASSWORD: espocrm
+      ESPOCRM_DATABASE_PASSWORD: ${ESPOCRM_DATABASE_PASSWORD}
       ESPOCRM_ADMIN_USERNAME: admin
-      ESPOCRM_ADMIN_PASSWORD: admin
+      ESPOCRM_ADMIN_PASSWORD: ${ESPOCRM_ADMIN_PASSWORD}
     volumes:
       - ./custom:/var/www/html/custom
       - espocrm_data:/var/www/html/data
@@ -26,7 +26,7 @@ services:
       ESPOCRM_DATABASE_HOST: db
       ESPOCRM_DATABASE_NAME: espocrm
       ESPOCRM_DATABASE_USER: espocrm
-      ESPOCRM_DATABASE_PASSWORD: espocrm
+      ESPOCRM_DATABASE_PASSWORD: ${ESPOCRM_DATABASE_PASSWORD}
     volumes:
       - ./custom:/var/www/html/custom
       - espocrm_data:/var/www/html/data
@@ -39,8 +39,8 @@ services:
     environment:
       MYSQL_DATABASE: espocrm
       MYSQL_USER: espocrm
-      MYSQL_PASSWORD: espocrm
-      MYSQL_ROOT_PASSWORD: root
+      MYSQL_PASSWORD: ${ESPOCRM_DATABASE_PASSWORD}
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
     volumes:
       - db_data:/var/lib/mysql
     healthcheck:
