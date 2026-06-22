@@ -1,0 +1,19 @@
+{
+    "labels": {
+        "Create Price Book Item": "Create Price Book Item"
+    },
+    "fields": {
+        "name": "Name",
+        "priceBook": "Price Book",
+        "product": "Product",
+        "unitPrice": "Unit Price",
+        "unitPriceConverted": "Unit Price (converted)",
+        "unitPriceCurrency": "Currency",
+        "discountPercent": "Discount %",
+        "notes": "Notes"
+    },
+    "links": {
+        "priceBook": "Price Book",
+        "product": "Product"
+    }
+}

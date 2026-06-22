@@ -1,0 +1,9 @@
+[
+    {"name": "name", "link": true},
+    {"name": "segment", "width": 15},
+    {"name": "status", "width": 10},
+    {"name": "isDefault", "width": 10},
+    {"name": "currency", "width": 10},
+    {"name": "validFrom", "width": 13},
+    {"name": "validTo", "width": 13}
+]

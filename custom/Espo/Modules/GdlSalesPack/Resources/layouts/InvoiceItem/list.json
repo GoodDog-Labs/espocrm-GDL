@@ -1,0 +1,9 @@
+[
+    {"name": "name", "link": true},
+    {"name": "product", "width": 20},
+    {"name": "quantity", "width": 8},
+    {"name": "unitPrice", "width": 15},
+    {"name": "discountPercent", "width": 10},
+    {"name": "taxRate", "width": 10},
+    {"name": "amount", "width": 15}
+]

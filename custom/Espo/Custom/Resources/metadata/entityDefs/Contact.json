@@ -1,0 +1,19 @@
+{
+    "links": {
+        "quotes": {
+            "type": "hasMany",
+            "entity": "Quote",
+            "foreign": "contact"
+        },
+        "subscriptions": {
+            "type": "hasMany",
+            "entity": "Subscription",
+            "foreign": "contact"
+        },
+        "invoices": {
+            "type": "hasMany",
+            "entity": "Invoice",
+            "foreign": "contact"
+        }
+    }
+}

@@ -1,0 +1,35 @@
+{
+    "controller": "controllers/record",
+    "iconClass": "fas fa-box",
+    "color": "#6fa8dc",
+    "sidePanels": {
+        "detail": [
+            {
+                "name": "activities",
+                "reference": "activities"
+            },
+            {
+                "name": "history",
+                "reference": "history"
+            },
+            {
+                "name": "tasks",
+                "reference": "tasks"
+            }
+        ]
+    },
+    "relationshipPanels": {
+        "priceBookItems": {
+            "create": true,
+            "select": false
+        },
+        "subscriptions": {
+            "create": false
+        }
+    },
+    "filterList": [
+        {"name": "active"},
+        {"name": "inactive"}
+    ],
+    "boolFilterList": ["onlyMy"]
+}

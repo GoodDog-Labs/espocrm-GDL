@@ -1,0 +1,28 @@
+{
+    "relationshipPanels": {
+        "quotes": {
+            "create": true,
+            "createAttributeMap": {
+                "accountId": "id",
+                "accountName": "name"
+            },
+            "label": "Quotes"
+        },
+        "subscriptions": {
+            "create": true,
+            "createAttributeMap": {
+                "accountId": "id",
+                "accountName": "name"
+            },
+            "label": "Subscriptions"
+        },
+        "invoices": {
+            "create": true,
+            "createAttributeMap": {
+                "accountId": "id",
+                "accountName": "name"
+            },
+            "label": "Invoices"
+        }
+    }
+}

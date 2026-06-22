@@ -1,0 +1,60 @@
+{
+    "labels": {
+        "Create Product": "Create Product"
+    },
+    "fields": {
+        "name": "Name",
+        "sku": "SKU",
+        "type": "Type",
+        "status": "Status",
+        "teamworkPlan": "TeamworkCMMS Plan",
+        "billingType": "Billing Type",
+        "unitPrice": "Unit Price",
+        "unitPriceConverted": "Unit Price (converted)",
+        "unitPriceCurrency": "Currency",
+        "maxUsers": "Max Users",
+        "category": "Category",
+        "description": "Description",
+        "notes": "Internal Notes",
+        "assignedUser": "Assigned To",
+        "teams": "Teams"
+    },
+    "links": {
+        "category": "Category",
+        "priceBookItems": "Price Book Items",
+        "subscriptions": "Subscriptions",
+        "quoteItems": "Quote Items",
+        "invoiceItems": "Invoice Items"
+    },
+    "options": {
+        "type": {
+            "SaaS Plan": "SaaS Plan",
+            "Add-on": "Add-on",
+            "Implementation Service": "Implementation Service",
+            "Training": "Training",
+            "Support": "Support"
+        },
+        "status": {
+            "Active": "Active",
+            "Inactive": "Inactive",
+            "Discontinued": "Discontinued"
+        },
+        "teamworkPlan": {
+            "": "",
+            "Starter": "Starter",
+            "Professional": "Professional",
+            "Enterprise": "Enterprise",
+            "Custom": "Custom"
+        },
+        "billingType": {
+            "One-time": "One-time",
+            "Monthly": "Monthly",
+            "Annual": "Annual",
+            "Quarterly": "Quarterly"
+        }
+    },
+    "presetFilters": {
+        "active": "Active",
+        "inactive": "Inactive"
+    }
+}

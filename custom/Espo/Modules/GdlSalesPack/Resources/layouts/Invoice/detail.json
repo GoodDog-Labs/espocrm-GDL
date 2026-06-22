@@ -1,0 +1,39 @@
+[
+    {
+        "label": "Overview",
+        "rows": [
+            [{"name": "name"}, {"name": "status"}],
+            [{"name": "account"}, {"name": "contact"}],
+            [{"name": "quote"}, {"name": "subscription"}],
+            [{"name": "issueDate"}, {"name": "dueDate"}],
+            [{"name": "assignedUser"}, false]
+        ]
+    },
+    {
+        "label": "Billing",
+        "rows": [
+            [{"name": "billingAddress", "fullWidth": true}]
+        ]
+    },
+    {
+        "label": "Totals",
+        "rows": [
+            [{"name": "subtotal"}, {"name": "discountPercent"}],
+            [{"name": "discountAmount"}, {"name": "taxRate"}],
+            [{"name": "taxAmount"}, {"name": "total"}],
+            [{"name": "paidAmount"}, {"name": "balanceDue"}]
+        ]
+    },
+    {
+        "label": "Integrations",
+        "rows": [
+            [{"name": "stripeInvoiceId"}, false]
+        ]
+    },
+    {
+        "label": "Notes",
+        "rows": [
+            [{"name": "notes", "fullWidth": true}]
+        ]
+    }
+]

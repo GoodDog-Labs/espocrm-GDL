@@ -1,0 +1,10 @@
+[
+    {"name": "name", "link": true},
+    {"name": "status", "width": 13},
+    {"name": "account", "width": 20},
+    {"name": "total", "width": 12},
+    {"name": "paidAmount", "width": 12},
+    {"name": "balanceDue", "width": 12},
+    {"name": "issueDate", "width": 11},
+    {"name": "dueDate", "width": 11}
+]

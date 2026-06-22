@@ -1,0 +1,15 @@
+{
+    "controller": "controllers/record",
+    "iconClass": "fas fa-tag",
+    "color": "#93c47d",
+    "relationshipPanels": {
+        "products": {
+            "create": false,
+            "select": false
+        },
+        "childCategories": {
+            "create": true,
+            "select": false
+        }
+    }
+}

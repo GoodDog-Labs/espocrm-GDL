@@ -1,0 +1,24 @@
+{
+    "labels": {
+        "Create Invoice Item": "Add Line Item"
+    },
+    "fields": {
+        "name": "Description",
+        "invoice": "Invoice",
+        "product": "Product",
+        "description": "Details",
+        "quantity": "Qty",
+        "unitPrice": "Unit Price",
+        "unitPriceConverted": "Unit Price (converted)",
+        "unitPriceCurrency": "Currency",
+        "discountPercent": "Discount %",
+        "taxRate": "Tax Rate %",
+        "amount": "Amount",
+        "amountConverted": "Amount (converted)",
+        "sortOrder": "Sort Order"
+    },
+    "links": {
+        "invoice": "Invoice",
+        "product": "Product"
+    }
+}

@@ -1,0 +1,244 @@
+{
+    "fields": {
+        "name": {
+            "type": "varchar",
+            "required": true,
+            "maxLength": 255,
+            "pattern": "$noBadCharacters"
+        },
+        "status": {
+            "type": "enum",
+            "options": [
+                "Draft",
+                "Sent",
+                "Accepted",
+                "Rejected",
+                "Expired",
+                "Cancelled"
+            ],
+            "default": "Draft",
+            "displayAsLabel": true,
+            "labelType": "state",
+            "style": {
+                "Draft": "default",
+                "Sent": "primary",
+                "Accepted": "success",
+                "Rejected": "danger",
+                "Expired": "info",
+                "Cancelled": "default"
+            },
+            "audited": true
+        },
+        "account": {
+            "type": "link",
+            "audited": true
+        },
+        "contact": {
+            "type": "link"
+        },
+        "opportunity": {
+            "type": "link",
+            "audited": true
+        },
+        "priceBook": {
+            "type": "link"
+        },
+        "validUntil": {
+            "type": "date"
+        },
+        "billingAddress": {
+            "type": "address"
+        },
+        "billingAddressStreet": {
+            "type": "text",
+            "maxLength": 255,
+            "dbType": "varchar"
+        },
+        "billingAddressCity": {
+            "type": "varchar"
+        },
+        "billingAddressState": {
+            "type": "varchar"
+        },
+        "billingAddressCountry": {
+            "type": "varchar"
+        },
+        "billingAddressPostalCode": {
+            "type": "varchar"
+        },
+        "subtotal": {
+            "type": "currency",
+            "readOnly": true,
+            "min": 0
+        },
+        "subtotalConverted": {
+            "type": "currencyConverted",
+            "readOnly": true
+        },
+        "discountPercent": {
+            "type": "float",
+            "min": 0,
+            "max": 100,
+            "decimalPlaces": 2,
+            "default": 0
+        },
+        "discountAmount": {
+            "type": "currency",
+            "readOnly": true,
+            "min": 0
+        },
+        "discountAmountConverted": {
+            "type": "currencyConverted",
+            "readOnly": true
+        },
+        "taxRate": {
+            "type": "float",
+            "min": 0,
+            "max": 100,
+            "decimalPlaces": 4,
+            "default": 0
+        },
+        "taxAmount": {
+            "type": "currency",
+            "readOnly": true,
+            "min": 0
+        },
+        "taxAmountConverted": {
+            "type": "currencyConverted",
+            "readOnly": true
+        },
+        "total": {
+            "type": "currency",
+            "readOnly": true,
+            "min": 0,
+            "audited": true
+        },
+        "totalConverted": {
+            "type": "currencyConverted",
+            "readOnly": true
+        },
+        "notes": {
+            "type": "text"
+        },
+        "termsAndConditions": {
+            "type": "text"
+        },
+        "assignedUser": {
+            "type": "link",
+            "view": "views/fields/assigned-user"
+        },
+        "teams": {
+            "type": "linkMultiple",
+            "view": "views/fields/teams"
+        },
+        "createdAt": {
+            "type": "datetime",
+            "readOnly": true,
+            "fieldManagerParamList": ["useNumericFormat"]
+        },
+        "modifiedAt": {
+            "type": "datetime",
+            "readOnly": true,
+            "fieldManagerParamList": ["useNumericFormat"]
+        },
+        "createdBy": {
+            "type": "link",
+            "readOnly": true,
+            "view": "views/fields/user",
+            "fieldManagerParamList": []
+        },
+        "modifiedBy": {
+            "type": "link",
+            "readOnly": true,
+            "view": "views/fields/user",
+            "fieldManagerParamList": []
+        }
+    },
+    "links": {
+        "account": {
+            "type": "belongsTo",
+            "entity": "Account",
+            "foreign": "quotes",
+            "audited": true
+        },
+        "contact": {
+            "type": "belongsTo",
+            "entity": "Contact",
+            "foreign": "quotes"
+        },
+        "opportunity": {
+            "type": "belongsTo",
+            "entity": "Opportunity",
+            "foreign": "quotes"
+        },
+        "priceBook": {
+            "type": "belongsTo",
+            "entity": "PriceBook",
+            "foreign": "quotes"
+        },
+        "quoteItems": {
+            "type": "hasMany",
+            "entity": "QuoteItem",
+            "foreign": "quote"
+        },
+        "invoices": {
+            "type": "hasMany",
+            "entity": "Invoice",
+            "foreign": "quote"
+        },
+        "assignedUser": {
+            "type": "belongsTo",
+            "entity": "User"
+        },
+        "teams": {
+            "type": "hasMany",
+            "entity": "Team",
+            "relationName": "entityTeam",
+            "layoutRelationshipsDisabled": true
+        },
+        "tasks": {
+            "type": "hasChildren",
+            "entity": "Task",
+            "foreign": "parent",
+            "audited": true
+        },
+        "emails": {
+            "type": "hasChildren",
+            "entity": "Email",
+            "foreign": "parent",
+            "layoutRelationshipsDisabled": true
+        },
+        "createdBy": {
+            "type": "belongsTo",
+            "entity": "User"
+        },
+        "modifiedBy": {
+            "type": "belongsTo",
+            "entity": "User"
+        }
+    },
+    "collection": {
+        "orderBy": "createdAt",
+        "order": "desc",
+        "textFilterFields": ["name"]
+    },
+    "indexes": {
+        "status": {
+            "columns": ["status", "deleted"]
+        },
+        "account": {
+            "columns": ["accountId", "deleted"]
+        },
+        "assignedUser": {
+            "columns": ["assignedUserId", "deleted"]
+        },
+        "createdAt": {
+            "columns": ["createdAt", "deleted"]
+        },
+        "createdAtId": {
+            "unique": true,
+            "columns": ["createdAt", "id"]
+        }
+    },
+    "optimisticConcurrencyControl": true
+}

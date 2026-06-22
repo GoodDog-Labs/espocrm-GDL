@@ -1,0 +1,43 @@
+{
+    "controller": "controllers/record",
+    "iconClass": "fas fa-file-invoice",
+    "color": "#f6b26b",
+    "sidePanels": {
+        "detail": [
+            {
+                "name": "history",
+                "reference": "history"
+            },
+            {
+                "name": "tasks",
+                "reference": "tasks"
+            }
+        ]
+    },
+    "relationshipPanels": {
+        "quoteItems": {
+            "create": true,
+            "select": false,
+            "rowActionsView": "views/record/row-actions/relationship-no-unlink",
+            "label": "Line Items"
+        },
+        "invoices": {
+            "create": true,
+            "select": false
+        }
+    },
+    "filterList": [
+        {"name": "open"},
+        {"name": "accepted", "style": "success"},
+        {"name": "rejected"}
+    ],
+    "boolFilterList": ["onlyMy"],
+    "additionalLayouts": {
+        "listForAccount": {
+            "type": "listSmall"
+        },
+        "listForOpportunity": {
+            "type": "listSmall"
+        }
+    }
+}

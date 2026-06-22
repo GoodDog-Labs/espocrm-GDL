@@ -1,0 +1,115 @@
+{
+    "fields": {
+        "name": {
+            "type": "varchar",
+            "maxLength": 255,
+            "pattern": "$noBadCharacters"
+        },
+        "quote": {
+            "type": "link",
+            "required": true
+        },
+        "product": {
+            "type": "link"
+        },
+        "description": {
+            "type": "text"
+        },
+        "quantity": {
+            "type": "float",
+            "min": 0,
+            "decimalPlaces": 2,
+            "default": 1
+        },
+        "unitPrice": {
+            "type": "currency",
+            "min": 0
+        },
+        "unitPriceConverted": {
+            "type": "currencyConverted",
+            "readOnly": true
+        },
+        "discountPercent": {
+            "type": "float",
+            "min": 0,
+            "max": 100,
+            "decimalPlaces": 2,
+            "default": 0
+        },
+        "taxRate": {
+            "type": "float",
+            "min": 0,
+            "max": 100,
+            "decimalPlaces": 4,
+            "default": 0
+        },
+        "amount": {
+            "type": "currency",
+            "min": 0
+        },
+        "amountConverted": {
+            "type": "currencyConverted",
+            "readOnly": true
+        },
+        "sortOrder": {
+            "type": "int",
+            "default": 0,
+            "layoutListDisabled": true
+        },
+        "createdAt": {
+            "type": "datetime",
+            "readOnly": true,
+            "fieldManagerParamList": ["useNumericFormat"]
+        },
+        "modifiedAt": {
+            "type": "datetime",
+            "readOnly": true,
+            "fieldManagerParamList": ["useNumericFormat"]
+        },
+        "createdBy": {
+            "type": "link",
+            "readOnly": true,
+            "view": "views/fields/user",
+            "fieldManagerParamList": []
+        },
+        "modifiedBy": {
+            "type": "link",
+            "readOnly": true,
+            "view": "views/fields/user",
+            "fieldManagerParamList": []
+        }
+    },
+    "links": {
+        "quote": {
+            "type": "belongsTo",
+            "entity": "Quote",
+            "foreign": "quoteItems"
+        },
+        "product": {
+            "type": "belongsTo",
+            "entity": "Product",
+            "foreign": "quoteItems"
+        },
+        "createdBy": {
+            "type": "belongsTo",
+            "entity": "User"
+        },
+        "modifiedBy": {
+            "type": "belongsTo",
+            "entity": "User"
+        }
+    },
+    "collection": {
+        "orderBy": "sortOrder",
+        "order": "asc"
+    },
+    "indexes": {
+        "quote": {
+            "columns": ["quoteId", "deleted"]
+        },
+        "createdAtId": {
+            "unique": true,
+            "columns": ["createdAt", "id"]
+        }
+    }
+}

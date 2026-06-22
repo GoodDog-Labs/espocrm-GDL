@@ -1,0 +1,65 @@
+{
+    "labels": {
+        "Create Invoice": "Create Invoice"
+    },
+    "fields": {
+        "name": "Invoice Number",
+        "status": "Status",
+        "account": "Account",
+        "contact": "Contact",
+        "quote": "Quote",
+        "subscription": "Subscription",
+        "issueDate": "Issue Date",
+        "dueDate": "Due Date",
+        "billingAddress": "Billing Address",
+        "billingAddressStreet": "Billing Street",
+        "billingAddressCity": "Billing City",
+        "billingAddressState": "Billing State",
+        "billingAddressCountry": "Billing Country",
+        "billingAddressPostalCode": "Billing Postal Code",
+        "subtotal": "Subtotal",
+        "subtotalConverted": "Subtotal (converted)",
+        "subtotalCurrency": "Currency",
+        "discountPercent": "Discount %",
+        "discountAmount": "Discount Amount",
+        "discountAmountConverted": "Discount (converted)",
+        "taxRate": "Tax Rate %",
+        "taxAmount": "Tax Amount",
+        "taxAmountConverted": "Tax (converted)",
+        "total": "Total",
+        "totalConverted": "Total (converted)",
+        "totalCurrency": "Currency",
+        "paidAmount": "Amount Paid",
+        "paidAmountConverted": "Amount Paid (converted)",
+        "balanceDue": "Balance Due",
+        "balanceDueConverted": "Balance Due (converted)",
+        "stripeInvoiceId": "Stripe Invoice ID",
+        "notes": "Notes",
+        "assignedUser": "Assigned To",
+        "teams": "Teams"
+    },
+    "links": {
+        "account": "Account",
+        "contact": "Contact",
+        "quote": "Quote",
+        "subscription": "Subscription",
+        "invoiceItems": "Line Items",
+        "paymentRequests": "Payment Requests"
+    },
+    "options": {
+        "status": {
+            "Draft": "Draft",
+            "Sent": "Sent",
+            "Partial": "Partially Paid",
+            "Paid": "Paid",
+            "Overdue": "Overdue",
+            "Void": "Void",
+            "Cancelled": "Cancelled"
+        }
+    },
+    "presetFilters": {
+        "open": "Open",
+        "paid": "Paid",
+        "overdue": "Overdue"
+    }
+}

@@ -1,0 +1,92 @@
+{
+    "fields": {
+        "name": {
+            "type": "varchar",
+            "maxLength": 255,
+            "pattern": "$noBadCharacters"
+        },
+        "priceBook": {
+            "type": "link",
+            "required": true
+        },
+        "product": {
+            "type": "link",
+            "required": true
+        },
+        "unitPrice": {
+            "type": "currency",
+            "min": 0
+        },
+        "unitPriceConverted": {
+            "type": "currencyConverted",
+            "readOnly": true
+        },
+        "discountPercent": {
+            "type": "float",
+            "min": 0,
+            "max": 100,
+            "decimalPlaces": 2
+        },
+        "notes": {
+            "type": "text"
+        },
+        "createdAt": {
+            "type": "datetime",
+            "readOnly": true,
+            "fieldManagerParamList": ["useNumericFormat"]
+        },
+        "modifiedAt": {
+            "type": "datetime",
+            "readOnly": true,
+            "fieldManagerParamList": ["useNumericFormat"]
+        },
+        "createdBy": {
+            "type": "link",
+            "readOnly": true,
+            "view": "views/fields/user",
+            "fieldManagerParamList": []
+        },
+        "modifiedBy": {
+            "type": "link",
+            "readOnly": true,
+            "view": "views/fields/user",
+            "fieldManagerParamList": []
+        }
+    },
+    "links": {
+        "priceBook": {
+            "type": "belongsTo",
+            "entity": "PriceBook",
+            "foreign": "priceBookItems"
+        },
+        "product": {
+            "type": "belongsTo",
+            "entity": "Product",
+            "foreign": "priceBookItems"
+        },
+        "createdBy": {
+            "type": "belongsTo",
+            "entity": "User"
+        },
+        "modifiedBy": {
+            "type": "belongsTo",
+            "entity": "User"
+        }
+    },
+    "collection": {
+        "orderBy": "createdAt",
+        "order": "desc"
+    },
+    "indexes": {
+        "priceBook": {
+            "columns": ["priceBookId", "deleted"]
+        },
+        "product": {
+            "columns": ["productId", "deleted"]
+        },
+        "createdAtId": {
+            "unique": true,
+            "columns": ["createdAt", "id"]
+        }
+    }
+}

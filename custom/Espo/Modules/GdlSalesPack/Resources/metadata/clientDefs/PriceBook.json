@@ -1,0 +1,28 @@
+{
+    "controller": "controllers/record",
+    "iconClass": "fas fa-book-open",
+    "color": "#e06666",
+    "sidePanels": {
+        "detail": [
+            {
+                "name": "priceBookItems",
+                "label": "Line Items",
+                "view": "views/record/panels/relationship",
+                "entityType": "PriceBookItem",
+                "link": "priceBookItems",
+                "create": true
+            }
+        ]
+    },
+    "relationshipPanels": {
+        "priceBookItems": {
+            "create": true,
+            "select": false,
+            "rowActionsView": "views/record/row-actions/relationship-no-unlink"
+        }
+    },
+    "filterList": [
+        {"name": "active"},
+        {"name": "inactive"}
+    ]
+}

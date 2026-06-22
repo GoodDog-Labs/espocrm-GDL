@@ -1,0 +1,18 @@
+[
+    {
+        "label": "Overview",
+        "rows": [
+            [{"name": "name"}, {"name": "status"}],
+            [{"name": "invoice"}, {"name": "account"}],
+            [{"name": "amount"}, {"name": "dueDate"}],
+            [{"name": "paymentLink", "fullWidth": true}],
+            [{"name": "sentAt"}, {"name": "paidAt"}]
+        ]
+    },
+    {
+        "label": "Notes",
+        "rows": [
+            [{"name": "notes", "fullWidth": true}]
+        ]
+    }
+]

@@ -1,0 +1,13 @@
+[
+    {
+        "label": "Overview",
+        "rows": [
+            [{"name": "quote"}, {"name": "product"}],
+            [{"name": "name"}, false],
+            [{"name": "description", "fullWidth": true}],
+            [{"name": "quantity"}, {"name": "unitPrice"}],
+            [{"name": "discountPercent"}, {"name": "taxRate"}],
+            [{"name": "amount"}, false]
+        ]
+    }
+]

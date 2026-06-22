@@ -1,0 +1,14 @@
+{
+    "relationshipPanels": {
+        "quotes": {
+            "create": true,
+            "createAttributeMap": {
+                "opportunityId": "id",
+                "opportunityName": "name",
+                "accountId": "accountId",
+                "accountName": "accountName"
+            },
+            "label": "Quotes"
+        }
+    }
+}

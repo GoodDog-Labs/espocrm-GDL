@@ -1,0 +1,185 @@
+{
+    "fields": {
+        "name": {
+            "type": "varchar",
+            "required": true,
+            "maxLength": 255,
+            "pattern": "$noBadCharacters"
+        },
+        "sku": {
+            "type": "varchar",
+            "maxLength": 100,
+            "pattern": "$noBadCharacters"
+        },
+        "type": {
+            "type": "enum",
+            "options": [
+                "SaaS Plan",
+                "Add-on",
+                "Implementation Service",
+                "Training",
+                "Support"
+            ],
+            "default": "SaaS Plan",
+            "displayAsLabel": true,
+            "labelType": "state",
+            "style": {
+                "SaaS Plan": "primary",
+                "Add-on": "info",
+                "Implementation Service": "warning",
+                "Training": "success",
+                "Support": "default"
+            }
+        },
+        "status": {
+            "type": "enum",
+            "options": ["Active", "Inactive", "Discontinued"],
+            "default": "Active",
+            "displayAsLabel": true,
+            "labelType": "state",
+            "style": {
+                "Active": "success",
+                "Inactive": "info",
+                "Discontinued": "default"
+            },
+            "audited": true
+        },
+        "teamworkPlan": {
+            "type": "enum",
+            "options": ["", "Starter", "Professional", "Enterprise", "Custom"],
+            "default": ""
+        },
+        "billingType": {
+            "type": "enum",
+            "options": ["One-time", "Monthly", "Annual", "Quarterly"],
+            "default": "Annual",
+            "displayAsLabel": true,
+            "labelType": "state",
+            "style": {
+                "One-time": "default",
+                "Monthly": "info",
+                "Annual": "primary",
+                "Quarterly": "warning"
+            }
+        },
+        "unitPrice": {
+            "type": "currency",
+            "min": 0,
+            "audited": true
+        },
+        "unitPriceConverted": {
+            "type": "currencyConverted",
+            "readOnly": true
+        },
+        "maxUsers": {
+            "type": "int",
+            "min": 0
+        },
+        "category": {
+            "type": "link"
+        },
+        "description": {
+            "type": "text"
+        },
+        "notes": {
+            "type": "text"
+        },
+        "assignedUser": {
+            "type": "link",
+            "view": "views/fields/assigned-user"
+        },
+        "teams": {
+            "type": "linkMultiple",
+            "view": "views/fields/teams"
+        },
+        "createdAt": {
+            "type": "datetime",
+            "readOnly": true,
+            "fieldManagerParamList": ["useNumericFormat"]
+        },
+        "modifiedAt": {
+            "type": "datetime",
+            "readOnly": true,
+            "fieldManagerParamList": ["useNumericFormat"]
+        },
+        "createdBy": {
+            "type": "link",
+            "readOnly": true,
+            "view": "views/fields/user",
+            "fieldManagerParamList": []
+        },
+        "modifiedBy": {
+            "type": "link",
+            "readOnly": true,
+            "view": "views/fields/user",
+            "fieldManagerParamList": []
+        }
+    },
+    "links": {
+        "category": {
+            "type": "belongsTo",
+            "entity": "ProductCategory",
+            "foreign": "products"
+        },
+        "priceBookItems": {
+            "type": "hasMany",
+            "entity": "PriceBookItem",
+            "foreign": "product"
+        },
+        "quoteItems": {
+            "type": "hasMany",
+            "entity": "QuoteItem",
+            "foreign": "product",
+            "layoutRelationshipsDisabled": true
+        },
+        "invoiceItems": {
+            "type": "hasMany",
+            "entity": "InvoiceItem",
+            "foreign": "product",
+            "layoutRelationshipsDisabled": true
+        },
+        "subscriptions": {
+            "type": "hasMany",
+            "entity": "Subscription",
+            "foreign": "product"
+        },
+        "assignedUser": {
+            "type": "belongsTo",
+            "entity": "User"
+        },
+        "teams": {
+            "type": "hasMany",
+            "entity": "Team",
+            "relationName": "entityTeam",
+            "layoutRelationshipsDisabled": true
+        },
+        "createdBy": {
+            "type": "belongsTo",
+            "entity": "User"
+        },
+        "modifiedBy": {
+            "type": "belongsTo",
+            "entity": "User"
+        }
+    },
+    "collection": {
+        "orderBy": "name",
+        "order": "asc",
+        "textFilterFields": ["name", "sku", "description"]
+    },
+    "indexes": {
+        "name": {
+            "columns": ["name", "deleted"]
+        },
+        "status": {
+            "columns": ["status", "deleted"]
+        },
+        "assignedUser": {
+            "columns": ["assignedUserId", "deleted"]
+        },
+        "createdAtId": {
+            "unique": true,
+            "columns": ["createdAt", "id"]
+        }
+    }
+}

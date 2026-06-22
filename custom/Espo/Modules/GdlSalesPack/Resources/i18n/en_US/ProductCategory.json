@@ -1,0 +1,15 @@
+{
+    "labels": {
+        "Create Product Category": "Create Product Category"
+    },
+    "fields": {
+        "name": "Name",
+        "description": "Description",
+        "parentCategory": "Parent Category"
+    },
+    "links": {
+        "parentCategory": "Parent Category",
+        "childCategories": "Subcategories",
+        "products": "Products"
+    }
+}

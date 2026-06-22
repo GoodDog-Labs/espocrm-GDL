@@ -1,0 +1,10 @@
+[
+    {
+        "label": "Overview",
+        "rows": [
+            [{"name": "priceBook"}, {"name": "product"}],
+            [{"name": "unitPrice"}, {"name": "discountPercent"}],
+            [{"name": "notes", "fullWidth": true}]
+        ]
+    }
+]

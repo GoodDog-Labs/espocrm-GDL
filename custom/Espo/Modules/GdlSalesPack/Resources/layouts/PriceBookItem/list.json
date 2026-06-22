@@ -1,0 +1,6 @@
+[
+    {"name": "product", "link": true},
+    {"name": "unitPrice", "width": 18},
+    {"name": "discountPercent", "width": 15},
+    {"name": "notes"}
+]

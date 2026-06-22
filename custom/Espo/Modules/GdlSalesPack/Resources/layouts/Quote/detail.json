@@ -1,0 +1,32 @@
+[
+    {
+        "label": "Overview",
+        "rows": [
+            [{"name": "name"}, {"name": "status"}],
+            [{"name": "account"}, {"name": "contact"}],
+            [{"name": "opportunity"}, {"name": "priceBook"}],
+            [{"name": "validUntil"}, {"name": "assignedUser"}]
+        ]
+    },
+    {
+        "label": "Billing",
+        "rows": [
+            [{"name": "billingAddress", "fullWidth": true}]
+        ]
+    },
+    {
+        "label": "Totals",
+        "rows": [
+            [{"name": "subtotal"}, {"name": "discountPercent"}],
+            [{"name": "discountAmount"}, {"name": "taxRate"}],
+            [{"name": "taxAmount"}, {"name": "total"}]
+        ]
+    },
+    {
+        "label": "Notes",
+        "rows": [
+            [{"name": "notes", "fullWidth": true}],
+            [{"name": "termsAndConditions", "fullWidth": true}]
+        ]
+    }
+]

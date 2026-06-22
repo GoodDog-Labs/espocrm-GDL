@@ -1,0 +1,12 @@
+[
+    {
+        "label": "Overview",
+        "rows": [
+            [{"name": "name"}, {"name": "status"}],
+            [{"name": "segment"}, {"name": "isDefault"}],
+            [{"name": "currency"}, false],
+            [{"name": "validFrom"}, {"name": "validTo"}],
+            [{"name": "description", "fullWidth": true}]
+        ]
+    }
+]

@@ -1,0 +1,119 @@
+{
+    "fields": {
+        "name": {
+            "type": "varchar",
+            "required": true,
+            "maxLength": 255,
+            "pattern": "$noBadCharacters"
+        },
+        "description": {
+            "type": "text"
+        },
+        "status": {
+            "type": "enum",
+            "options": ["Active", "Inactive"],
+            "default": "Active",
+            "displayAsLabel": true,
+            "labelType": "state",
+            "style": {
+                "Active": "success",
+                "Inactive": "default"
+            },
+            "audited": true
+        },
+        "segment": {
+            "type": "enum",
+            "options": [
+                "Standard",
+                "SMB",
+                "Enterprise",
+                "Nonprofit",
+                "Channel Partner",
+                "Government"
+            ],
+            "default": "Standard",
+            "displayAsLabel": true,
+            "labelType": "state",
+            "style": {
+                "Standard": "default",
+                "SMB": "info",
+                "Enterprise": "primary",
+                "Nonprofit": "success",
+                "Channel Partner": "warning",
+                "Government": "default"
+            }
+        },
+        "isDefault": {
+            "type": "bool",
+            "default": false
+        },
+        "currency": {
+            "type": "varchar",
+            "maxLength": 3,
+            "default": "USD"
+        },
+        "validFrom": {
+            "type": "date"
+        },
+        "validTo": {
+            "type": "date"
+        },
+        "createdAt": {
+            "type": "datetime",
+            "readOnly": true,
+            "fieldManagerParamList": ["useNumericFormat"]
+        },
+        "modifiedAt": {
+            "type": "datetime",
+            "readOnly": true,
+            "fieldManagerParamList": ["useNumericFormat"]
+        },
+        "createdBy": {
+            "type": "link",
+            "readOnly": true,
+            "view": "views/fields/user",
+            "fieldManagerParamList": []
+        },
+        "modifiedBy": {
+            "type": "link",
+            "readOnly": true,
+            "view": "views/fields/user",
+            "fieldManagerParamList": []
+        }
+    },
+    "links": {
+        "priceBookItems": {
+            "type": "hasMany",
+            "entity": "PriceBookItem",
+            "foreign": "priceBook"
+        },
+        "quotes": {
+            "type": "hasMany",
+            "entity": "Quote",
+            "foreign": "priceBook",
+            "layoutRelationshipsDisabled": true
+        },
+        "createdBy": {
+            "type": "belongsTo",
+            "entity": "User"
+        },
+        "modifiedBy": {
+            "type": "belongsTo",
+            "entity": "User"
+        }
+    },
+    "collection": {
+        "orderBy": "name",
+        "order": "asc",
+        "textFilterFields": ["name", "description"]
+    },
+    "indexes": {
+        "status": {
+            "columns": ["status", "deleted"]
+        },
+        "createdAtId": {
+            "unique": true,
+            "columns": ["createdAt", "id"]
+        }
+    }
+}

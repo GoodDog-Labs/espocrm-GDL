@@ -1,0 +1,16 @@
+{
+    "controller": "controllers/record",
+    "iconClass": "fas fa-link",
+    "color": "#8e7cc3",
+    "filterList": [
+        {"name": "pending"},
+        {"name": "paid", "style": "success"},
+        {"name": "expired"}
+    ],
+    "boolFilterList": ["onlyMy"],
+    "additionalLayouts": {
+        "listForInvoice": {
+            "type": "listSmall"
+        }
+    }
+}

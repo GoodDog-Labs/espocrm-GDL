@@ -1,0 +1,9 @@
+[
+    {"name": "name", "link": true},
+    {"name": "status", "width": 12},
+    {"name": "account", "width": 20},
+    {"name": "total", "width": 14},
+    {"name": "validUntil", "width": 13},
+    {"name": "assignedUser", "width": 15},
+    {"name": "createdAt", "width": 13}
+]

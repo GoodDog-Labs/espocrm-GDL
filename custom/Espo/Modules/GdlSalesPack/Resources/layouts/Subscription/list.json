@@ -1,0 +1,10 @@
+[
+    {"name": "name", "link": true},
+    {"name": "status", "width": 10},
+    {"name": "account", "width": 20},
+    {"name": "product", "width": 18},
+    {"name": "billingCycle", "width": 11},
+    {"name": "amount", "width": 12},
+    {"name": "nextBillingDate", "width": 13},
+    {"name": "assignedUser", "width": 13}
+]

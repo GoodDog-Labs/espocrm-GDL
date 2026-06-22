@@ -1,0 +1,31 @@
+[
+    {
+        "label": "Overview",
+        "rows": [
+            [{"name": "name"}, {"name": "status"}],
+            [{"name": "account"}, {"name": "contact"}],
+            [{"name": "product"}, {"name": "billingCycle"}],
+            [{"name": "quantity"}, {"name": "amount"}],
+            [{"name": "assignedUser"}, false]
+        ]
+    },
+    {
+        "label": "Dates",
+        "rows": [
+            [{"name": "startDate"}, {"name": "trialEndDate"}],
+            [{"name": "nextBillingDate"}, {"name": "endDate"}]
+        ]
+    },
+    {
+        "label": "Integrations",
+        "rows": [
+            [{"name": "stripeSubscriptionId"}, false]
+        ]
+    },
+    {
+        "label": "Notes",
+        "rows": [
+            [{"name": "notes", "fullWidth": true}]
+        ]
+    }
+]

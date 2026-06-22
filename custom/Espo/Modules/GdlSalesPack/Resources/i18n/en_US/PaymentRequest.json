@@ -1,0 +1,37 @@
+{
+    "labels": {
+        "Create Payment Request": "Create Payment Request"
+    },
+    "fields": {
+        "name": "Name",
+        "status": "Status",
+        "invoice": "Invoice",
+        "account": "Account",
+        "amount": "Amount",
+        "amountConverted": "Amount (converted)",
+        "amountCurrency": "Currency",
+        "dueDate": "Due Date",
+        "paymentLink": "Payment Link",
+        "sentAt": "Sent At",
+        "paidAt": "Paid At",
+        "notes": "Notes"
+    },
+    "links": {
+        "invoice": "Invoice",
+        "account": "Account"
+    },
+    "options": {
+        "status": {
+            "Pending": "Pending",
+            "Sent": "Sent",
+            "Paid": "Paid",
+            "Expired": "Expired",
+            "Cancelled": "Cancelled"
+        }
+    },
+    "presetFilters": {
+        "pending": "Pending",
+        "paid": "Paid",
+        "expired": "Expired"
+    }
+}

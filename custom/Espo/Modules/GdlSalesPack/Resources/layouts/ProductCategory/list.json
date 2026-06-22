@@ -1,0 +1,5 @@
+[
+    {"name": "name", "link": true},
+    {"name": "parentCategory"},
+    {"name": "createdAt", "width": 18}
+]

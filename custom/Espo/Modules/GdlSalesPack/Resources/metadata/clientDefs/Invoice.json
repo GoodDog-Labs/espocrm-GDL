@@ -1,0 +1,46 @@
+{
+    "controller": "controllers/record",
+    "iconClass": "fas fa-file-invoice-dollar",
+    "color": "#cc4125",
+    "sidePanels": {
+        "detail": [
+            {
+                "name": "history",
+                "reference": "history"
+            },
+            {
+                "name": "tasks",
+                "reference": "tasks"
+            }
+        ]
+    },
+    "relationshipPanels": {
+        "invoiceItems": {
+            "create": true,
+            "select": false,
+            "rowActionsView": "views/record/row-actions/relationship-no-unlink",
+            "label": "Line Items"
+        },
+        "paymentRequests": {
+            "create": true,
+            "select": false
+        }
+    },
+    "filterList": [
+        {"name": "open"},
+        {"name": "paid", "style": "success"},
+        {"name": "overdue", "style": "danger"}
+    ],
+    "boolFilterList": ["onlyMy"],
+    "additionalLayouts": {
+        "listForAccount": {
+            "type": "listSmall"
+        },
+        "listForSubscription": {
+            "type": "listSmall"
+        },
+        "listForQuote": {
+            "type": "listSmall"
+        }
+    }
+}

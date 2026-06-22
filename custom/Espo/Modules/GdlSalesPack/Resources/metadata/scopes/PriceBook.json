@@ -1,0 +1,13 @@
+{
+    "entity": true,
+    "layouts": true,
+    "tab": true,
+    "acl": true,
+    "module": "GdlSalesPack",
+    "customizable": true,
+    "stream": false,
+    "importable": false,
+    "notifications": false,
+    "object": true,
+    "statusField": "status"
+}
