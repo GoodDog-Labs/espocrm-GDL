@@ -12,8 +12,6 @@ services:
     volumes:
       - ./custom:/var/www/html/custom
       - espocrm_data:/var/www/html/data
-    ports:
-      - "8080:80"
     depends_on:
       db:
         condition: service_healthy
